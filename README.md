@@ -34,6 +34,15 @@
 
 ### Add ssh key file credentials in Jenkins for Ansible Control Node server(droplet server) and Ansible Managed Node servers(ec2 instance)
 
+* need the ssh key to connect to the Ansible server (droplet) from Jenkins; 
+
+
+*   In Jenkins use the ssh username with a private key (ansible server control node) before adding the private key, convert the ssh private key command to "ssh-keygen -p -f..sh/id_rsa -m pem -p "" -N""and ""  " then add these private keys in Jenkins. 
+
+* need the ssh key to connect to the Ansible manged server  (ec2 instance) from Jenkins; 
+*   Private key for EC2 instance: For ansible playbook execution, the.ssh-key pem file must be present on the ansible server, so we must first make this pem file available within Jenkins so that Jenkins can copy it to the ansible server. In Jenkins server , create the credentials  with ssh username with private key 
+
+
   * Install the ```ssh agent``` Plugin and  ```ssh pipeline steps plugin``` in jenkins.
       
 ### Configure Jenkins to execute the Ansible Playbook on remote Ansible Control Node server as part of the CI/CD pipeline
