@@ -28,6 +28,8 @@
     
 ### Create two  EC2 Instances (for Ansible Managed Nodes) manually and download the pem file.
 
+* Manually launch the two Amazon Linux instances (managed servers) in AWS EC2 Dashboad and create the new key pairs for ansible-jenkins since ansible-server connects to the instances required to configure the ssh key
+
 * written   the Ansible Playbook that installs  the  Docker and Docker Compose in the Ec2 server with ansible.cfg file , and inventory file
 
 
