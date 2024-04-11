@@ -74,5 +74,6 @@
 
 <img src="https://github.com/Rajib-Mardi/Complete-CI-CD-Pipeline-with-EKS-and-AWS-ECR/assets/96679708/465fa75f-33d2-461a-9339-4d85426ecf65" width="700">
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
 <img src="https://github.com/Rajib-Mardi/Complete-CI-CD-Pipeline-with-EKS-and-AWS-ECR/assets/96679708/df3d07e3-d9af-477d-848a-c60569a10e23" width="700">
