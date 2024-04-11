@@ -1,0 +1,56 @@
+---
+
+- name: Install Pip3, docker and docker-compose
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure pip3 and docker installed
+      yum:
+        name:
+          - python3-pip
+          - docker
+          - python3
+        update_cache: yes
+        state: present
+     
+    #- name: Install Python3 and docker
+
+      #vars:
+        #ansible_python_interpreter: /usr/bin/python
+
+
+    - name: Install Docker-compose
+      get_url:
+        url: https://github.com/docker/compose/releases/download/1.27.4/docker-compose-Linux-{{lookup('pipe','uname -m')}}
+        dest: /usr/local/bin/docker-compose
+        mode: +x
+    - name: Start docker daemon
+      systemd:
+        name: docker
+        state: started
+
+
+
+
+- name: Create new linux user
+  hosts: all
+  become: yes
+  tasks:
+    - name: create new linux user
+      user:
+        name: rajib
+        groups: adm,docker
+        append: yes
+    - name: Reconnect to server session
+      meta: reset_connection
+
+- name: Install docker python modules
+  hosts: all
+  become: yes
+  become_user: rajib
+  tasks:
+    - name: Install docker python module
+      ansible.builtin.pip:
+        name: 
+          - docker
+          - docker-compose
