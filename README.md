@@ -1,5 +1,5 @@
  ### Project: 
-   * Ansible Integration in Jenkins 
+   * Ansible Integration in Jenkins(Integrated Ansible Playbook execution as part of the  CI/CD pipeline)
  ### Technologiesused: 
    * Ansible, Jenkins, DigitalOcean, AWS, Boto3, Docker, Java, Maven, Linux, Git
 
